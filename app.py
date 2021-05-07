@@ -467,7 +467,7 @@ def social_video():
     elif social_file is not None:
         sfile = tempfile.NamedTemporaryFile(delete=False)
         sfile.write(social_file.read())  
-        caffeNetwork = cv2.dnn.readNetFromCaffe("./social_dist/SSD_MobileNet_prototxt.txt", "./social_dist/SSD_MobileNet.caffemodel")
+        caffeNetwork = cv2.dnn.readNetFromCaffe("./face-detector/deploy.prototxt", "./face-detector/res10_300x300_ssd_iter_140000.caffemodel")
         cap = cv2.VideoCapture(sfile.name)
         fourcc = cv2.VideoWriter_fourcc(*"XVID")
         output_movie = cv2.VideoWriter("./socialresult.avi", fourcc, 24, (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))))
