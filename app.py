@@ -567,7 +567,7 @@ def main():
                 if st.button('Process',key="11"):
                     st.image(RGB_img, use_column_width=True)
             
-            enhance_type = st.sidebar.radio("Enchance type", ("Original","Gray-scale","Contrast","Brightness","Blurring"),key="5")
+            enhance_type = st.sidebar.radio("Enchance type", ("Original","Gray-scale"),key="5")
             if enhance_type == 'Gray-scale':
                 # new_img = np.array(RGB_img.convert('RGB'))
                 img = cv2.cvtColor(RGB_img, 1)
